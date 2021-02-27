@@ -45,7 +45,7 @@
        }
      }
   ```
-  * **Island of Isolation** 
+  * **Island of Isolation:** 
   After line 9, though 3 objects have their internal references via i, we can't access them. These group of objects are considered in island. So, GC will clean up them all.
   ```
   class Test {
@@ -125,8 +125,8 @@ class FinalizeDemo {
 ``` 
 * **Memory leaks:** Objects which are created but not used anywhereand are not eligible for GC either.
 * **Memory Management Tools to identify Memory Leaks:**
-    1. HP-PATROL
-    2. HP-J-Meter
-    3. HP-OVO
-    4. IBM-Tivoli
-    5. JPROBE
+    - HP-PATROL
+    - HP-J-Meter
+    - HP-OVO
+    - IBM-Tivoli
+    - JPROBE
