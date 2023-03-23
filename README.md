@@ -130,3 +130,19 @@ class FinalizeDemo {
     - HP-OVO
     - IBM-Tivoli
     - JPROBE
+   
+   
+## Processes involved with Garbage collection
+   - **Mark**: Start from root node of application, walks through the object graph and marks objects that are reachable.
+   - **Delete/Sweep**: Delete unreachable objects
+   - **Compact**: After removing the unreachable objects (by gc) holes. This step compacts the memory by moving the alive objects contiguously rather than keeping them fragmented.
+   
+## Generational Collectors
+![jvm_heap_java8](https://user-images.githubusercontent.com/36560845/227317591-168004c9-74ba-4057-a8a9-32ae9dd259e6.png)
+
+* Young Generation: Divided into following 2 spaces.
+  - Eden: New spaces are created here
+  - Survivor Space: When eden space is full, a minor gc is triggered and all the reachable objects are moved to survivor space. Remaining unreachable objects are then collected by garbage collector.
+  
+* Old Generation:
+  - The objects that are survived even after multiple cycle of garbage collection, are moved to this space. 
